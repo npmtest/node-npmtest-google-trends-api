@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-google-trends-api/node_modules/google-trends-api/lib/google-trends-api.min.js</title>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            height: 160px;
+            padding: 0 1em 0 1em;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 170px;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { color: #000; }
+        div.coverage-summary a:visited { color: #333; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1 style="font-weight: bold;">
+        <a href="https://github.com/npmtest/node-npmtest-google-trends-api">npmtest-google-trends-api (v0.0.1)</a>
+    </h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-google-trends-api/node_modules/google-trends-api/lib/google-trends-api.min.js</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">43.01% <small>(40 / 93)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">18.48% <small>(17 / 92)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">35.9% <small>(14 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-google-trends-api/node_modules/google-trends-api/lib/</a> &#187; google-trends-api.min.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3</td><td class="line-coverage"><span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">!function(e,t){"object"==typeof exports&amp;&amp;"object"==typeof module?module.exports=t(require("https"),require("querystring")):<span class="branch-1 cbranch-no" title="branch not covered" >"function"==typeof define&amp;&amp;define.amd?define("google-trends-api",["https","querystring"],t):"object"==typeof exports?exports["google-trends-api"]=t(require("https"),require("querystring")):e["google-trends-api"]=t(e.https,e.querystring)}</span>(this,function(e,t){return function(e){function t(n){<span class="missing-if-branch" title="if path not taken" >I</span>if(r[n])<span class="cstat-no" title="statement not covered" >return r[n].exports;v</span>ar o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p="",t(0)}([function(e,t,r){"use strict";function n(e){return e&amp;&amp;e.__esModule?<span class="branch-0 cbranch-no" title="branch not covered" >e:</span>{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=r(1),i=n(o);t["default"]={interestByRegion:(0,i["default"])("interest by region"),interestOverTime:(0,i["default"])("interest over time"),relatedQueries:(0,i["default"])("related queries"),relatedTopics:(0,i["default"])("related topics")},e.exports=t["default"]},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=r(2);t["default"]=function(e){return <span class="fstat-no" title="function not covered" >function(t,r){<span class="cstat-no" title="statement not covered" ></span>var o=(0,n.constructObj)(t,r),i=o.cbFunc,u=o.obj;<span class="cstat-no" title="statement not covered" >r</span>eturn u instanceof Error?Promise.reject(i(u)):(0,n.getResults)(e,u).then(<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>return i(null,e)}</span>)["catch"](<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>return Promise.reject(i(e))}</span>)}</span>},e.exports=t["default"]},function(e,t,r){"use strict";function n(e){return e&amp;&amp;e.__esModule?<span class="branch-0 cbranch-no" title="branch not covered" >e:</span>{"default":e}}<span class="fstat-no" title="function not covered" >function o(e,t){<span class="cstat-no" title="statement not covered" ></span>return Math.abs(t-e)/864e5&lt;7}<span class="fstat-no" title="function not covered" ></span>function i(e,t){<span class="cstat-no" title="statement not covered" ></span>var r=(e.getUTCMonth()+1).toString();<span class="cstat-no" title="statement not covered" >r</span>=r.length&lt;2?"0"+r:r;<span class="cstat-no" title="statement not covered" >v</span>ar n=e.getUTCDate().toString(),o=e.getUTCFullYear().toString(),i=e.getUTCHours(),u=e.getUTCMinutes();<span class="cstat-no" title="statement not covered" >r</span>eturn t?o+"-"+r+"-"+n+"T"+i+"\\:"+u+"\\:00":o+"-"+r+"-"+n}<span class="fstat-no" title="function not covered" ></span>function u(e){<span class="cstat-no" title="statement not covered" ></span>if(e.startTime&amp;&amp;!(e.startTime instanceof Date))<span class="cstat-no" title="statement not covered" >return new Error("startTime must be a Date object");<span class="cstat-no" title="statement not covered" >i</span></span>f(e.endTime&amp;&amp;!(e.endTime instanceof Date))<span class="cstat-no" title="statement not covered" >return new Error("endTime must be a Date object");<span class="cstat-no" title="statement not covered" >i</span></span>f(e.startTime&amp;&amp;e.endTime&amp;&amp;e.startTime&gt;e.endTime){<span class="cstat-no" title="statement not covered" >var t=e.startTime;<span class="cstat-no" title="statement not covered" >e</span>.startTime=e.endTime,e.endTime=t}<span class="cstat-no" title="statement not covered" ></span>e</span>.endTime||(e.endTime=new Date),e.startTime||(e.startTime=new Date("2004-01-01"));<span class="cstat-no" title="statement not covered" >v</span>ar r=o(e.startTime,e.endTime),n=i(e.startTime,r),u=i(e.endTime,r);<span class="cstat-no" title="statement not covered" >r</span>eturn e.time=n+" "+u,e}<span class="fstat-no" title="function not covered" ></span>function s(e,t){<span class="cstat-no" title="statement not covered" ></span>return"function"==typeof e&amp;&amp;(t=e),!e||e&amp;&amp;"object"!==("undefined"==typeof e?"undefined":p(e))||Array.isArray(e)?e=new Error("Must supply an object"):e.keyword||(e=new Error("Must have a keyword field")),t&amp;&amp;"function"!=typeof t&amp;&amp;(e=new Error("Callback function must be a function")),e.hl||(e.hl="en-US"),t||(t=<span class="fstat-no" title="function not covered" >function(e,t){<span class="cstat-no" title="statement not covered" ></span>return e?e:t}</span>),e=u(e),{cbFunc:t,obj:e}}<span class="fstat-no" title="function not covered" ></span>function a(){<span class="cstat-no" title="statement not covered" ></span>var e=arguments.length&gt;0&amp;&amp;void 0!==arguments[0]?arguments[0]:"",t=["COUNTRY","REGION","CITY","DMA"],r=t.some(<span class="fstat-no" title="function not covered" >function(t){<span class="cstat-no" title="statement not covered" ></span>return t===e.toUpperCase()}</span>);<span class="cstat-no" title="statement not covered" >r</span>eturn r?e.toUpperCase():""}<span class="fstat-no" title="function not covered" ></span>function f(e){<span class="cstat-no" title="statement not covered" ></span>try{<span class="cstat-no" title="statement not covered" >return JSON.parse(e.slice(4)).widgets}</span>catch(t){<span class="cstat-no" title="statement not covered" >throw t.requestBody=e,t}</span>}<span class="fstat-no" title="function not covered" ></span>function c(e){<span class="cstat-no" title="statement not covered" ></span>return Array.isArray(e.keyword)?e.keyword.reduce(<span class="fstat-no" title="function not covered" >function(t,r){<span class="cstat-no" title="statement not covered" ></span>return t.push(l({},e,{keyword:r})),t}</span>,[]):[e]}<span class="fstat-no" title="function not covered" ></span>function d(e,t){<span class="cstat-no" title="statement not covered" ></span>var r={"interest over time":{path:"/trends/api/widgetdata/multiline",pos:0},"interest by region":{path:"/trends/api/widgetdata/comparedgeo",pos:1,resolution:a(t.resolution)},"related topics":{path:"/trends/api/widgetdata/relatedsearches",pos:2},"related queries":{path:"/trends/api/widgetdata/relatedsearches",pos:3}},n={method:"GET",host:"trends.google.com",path:"/trends/api/explore",qs:{hl:t.hl,req:JSON.stringify({comparisonItem:c(t),cat:0}),tz:300}},o=r[e],i=o.pos,u=o.path,s=o.resolution;<span class="cstat-no" title="statement not covered" >r</span>eturn(0,y["default"])(n).then(<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>var r=f(e),n=r[i].request;<span class="cstat-no" title="statement not covered" >s</span>&amp;&amp;(n.resolution=s),n=JSON.stringify(n);<span class="cstat-no" title="statement not covered" >v</span>ar o=r[i].token,a={path:u,method:"GET",host:"trends.google.com",qs:{hl:t.hl,req:n,token:o,tz:300}};<span class="cstat-no" title="statement not covered" >r</span>eturn(0,y["default"])(a)}</span>).then(<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>return e.slice(5)}</span>)}</span>Object.defineProperty(t,"__esModule",{value:!0});var l=Object.assign||<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>for(var t=1;t&lt;arguments.length;t++){<span class="cstat-no" title="statement not covered" >var r=arguments[t];<span class="cstat-no" title="statement not covered" >f</span>or(var n in r)<span class="cstat-no" title="statement not covered" >Object.prototype.hasOwnProperty.call(r,n)&amp;&amp;(e[n]=r[n])}<span class="cstat-no" title="statement not covered" ></span></span>r</span>eturn e}</span>,</span>p="function"==typeof Symbol&amp;&amp;"symbol"==typeof Symbol.iterator?<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>return typeof e}</span>:<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>return e&amp;&amp;"function"==typeof Symbol&amp;&amp;e.constructor===Symbol&amp;&amp;e!==Symbol.prototype?"symbol":typeof e}</span>;</span>t.isLessThan7Days=o,t.convertDateToString=i,t.formatTime=u,t.constructObj=s,t.formatResolution=a,t.parseResults=f,t.formatKeywords=c,t.getResults=d;var m=r(3),y=n(m)},function(e,t,r){"use strict";function n(e){return e&amp;&amp;e.__esModule?<span class="branch-0 cbranch-no" title="branch not covered" >e:</span>{"default":e}}<span class="fstat-no" title="function not covered" >function o(e){<span class="cstat-no" title="statement not covered" ></span>var t=e.method,r=e.host,n=e.path,o=e.qs,i={host:r,method:t,path:n+"?"+a["default"].stringify(o)};<span class="cstat-no" title="statement not covered" >r</span>eturn new Promise(<span class="fstat-no" title="function not covered" >function(e,t){<span class="cstat-no" title="statement not covered" ></span>var r=u["default"].request(i,<span class="fstat-no" title="function not covered" >function(t){<span class="cstat-no" title="statement not covered" ></span>var r="";<span class="cstat-no" title="statement not covered" >t</span>.on("data",<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>r+=e}</span>),t.on("end",<span class="fstat-no" title="function not covered" >function(){<span class="cstat-no" title="statement not covered" ></span>e(r.toString("utf8"))}</span>)}</span>);<span class="cstat-no" title="statement not covered" >r</span>.on("error",<span class="fstat-no" title="function not covered" >function(e){<span class="cstat-no" title="statement not covered" ></span>t(e)}</span>),r.end()}</span>)}</span>Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;var i=r(4),u=n(i),s=r(5),a=n(s);e.exports=t["default"]},function(e,t){e.exports=require("https")},function(e,t){e.exports=require("querystring")}])});
+//# sourceMappingURL=google-trends-api.min.js.map
+&nbsp;</pre></td></tr>
+</table></pre>
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 09:59:51 GMT+0000 (UTC)</div>
+</div>
+</body>
+</html>
