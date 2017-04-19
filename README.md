@@ -1,4 +1,7 @@
-# test coverage for  [google-trends-api (v4.1.0)](https://github.com/pat310/google-trends-api#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-google-trends-api.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-google-trends-api) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-google-trends-api.svg)](https://travis-ci.org/npmtest/node-npmtest-google-trends-api)
+# npmtest-google-trends-api
+
+#### test coverage for  [google-trends-api (v4.1.0)](https://github.com/pat310/google-trends-api#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-google-trends-api.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-google-trends-api) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-google-trends-api.svg)](https://travis-ci.org/npmtest/node-npmtest-google-trends-api)
+
 #### an API layer on top of google trends
 
 [![NPM](https://nodei.co/npm/google-trends-api.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/google-trends-api)
