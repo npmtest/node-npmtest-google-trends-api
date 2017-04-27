@@ -1,6 +1,6 @@
 # npmtest-google-trends-api
 
-#### test coverage for  [google-trends-api (v4.1.0)](https://github.com/pat310/google-trends-api#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-google-trends-api.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-google-trends-api) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-google-trends-api.svg)](https://travis-ci.org/npmtest/node-npmtest-google-trends-api)
+#### basic test coverage for  [google-trends-api (v4.1.0)](https://github.com/pat310/google-trends-api#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-google-trends-api.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-google-trends-api) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-google-trends-api.svg)](https://travis-ci.org/npmtest/node-npmtest-google-trends-api)
 
 #### an API layer on top of google trends
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-google-trends-api/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-google-trends-api/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-google-trends-api/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-google-trends-api/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-google-trends-api/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-google-trends-api/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-google-trends-api/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-google-trends-api/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-google-trends-api/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-google-trends-api/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-google-trends-api/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-google-trends-api/build/coverage.html/index.html)
 
@@ -104,7 +104,8 @@
         "test": "mocha --compilers js:babel-core/register --colors ./test/*.spec.js",
         "test:watch": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
     },
-    "version": "4.1.0"
+    "version": "4.1.0",
+    "bin": {}
 }
 ```
 
